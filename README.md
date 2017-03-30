@@ -1,11 +1,11 @@
-# _pc-part-reviewer_
+# _Pc Part Reviewer_
 
-#### _pc-part-reviewer, 03-30-2017_
+#### _A java app for reviewing pc components, 03-30-2017_
 
 #### By _**Christian Martinez**_
 
 ## Description
-_Example text for the description of the project_
+_This java application will add manufacturers and pc components that can be reviewed by users_
 
 
 ## Specifications
