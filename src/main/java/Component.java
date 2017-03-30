@@ -87,4 +87,26 @@ public class Component {
     }
   }
 
+  public void update(String type, String name, int price, String review) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE components SET type = :type, name = :name, price = :price, review = :review WHERE id = :id";
+      con.createQuery(sql)
+      .addParameter("type", type)
+      .addParameter("name", name)
+      .addParameter("price", price)
+      .addParameter("review", review)
+      .addParameter("id", id)
+      .executeUpdate();
+    }
+  }
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM components WHERE id = :id;";
+      con.createQuery(sql)
+      .addParameter("id", id)
+      .executeUpdate();
+    }
+  }
+
 }

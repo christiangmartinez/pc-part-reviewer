@@ -64,4 +64,21 @@ public class ComponentTest {
     assertEquals(secondComponent, Component.find(secondComponent.getId()));
   }
 
+  @Test
+  public void update_updatesComponentInfo_true() {
+    Component testComponent = new Component("GPU", "GTX 1070", 400, "good");
+    testComponent.save();
+    testComponent.update("GPU", "GTX 1080", 600, "better");
+    assertEquals("GTX 1080", Component.find(testComponent.getId()).getName());
+  }
+
+  @Test
+  public void delete_deletesComponent_true() {
+    Component testComponent = new Component("GPU", "GTX 1070", 400, "good");
+    testComponent.save();
+    int testComponentId = testComponent.getId();
+    testComponent.delete();
+    assertEquals(null, Component.find(testComponentId));
+  }
+
 }
