@@ -7,4 +7,16 @@ public class ManufacturerTest {
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
+  @Test
+  public void manufacturer_instantiatesCorrectly_true() {
+    Manufacturer testManufacturer = new Manufacturer("Asus");
+    assertTrue(testManufacturer instanceof Manufacturer);
+  }
+
+  @Test
+  public void getName_manufacturerInstantiatesWithName_Asus() {
+    Manufacturer testManufacturer = new Manufacturer("Asus");
+    assertEquals("Asus", testManufacturer.getName());
+  }
+
 }
